@@ -29,7 +29,10 @@ export default function AddStudent() {
 
 const student = {rollNo,name,math,science,english,fee,course};
 
-axios.post("http://localhost:8080/stu/mng/add",student);
+axios.post("http://localhost:8080/stu/mng/add",student)
+.then((res)=>{
+console.log(res.data);
+});
 
 
 
