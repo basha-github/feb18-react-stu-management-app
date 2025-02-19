@@ -1,12 +1,24 @@
-import React from "react";
+//import React from "react";
 import NavBar from "./NavBar";
 import "../css/my-mar-stu.css";
+import { useState } from "react";
 
 export default function AddStudent() {
+
+  const [rollNo,setRollNo] = useState(''); 
+
+
   const saveStu = (e: FormDataEvent) => {
     e.preventDefault();
     console.log("submit button clicked!!!!");
+    console.log("roll no--->"+rollNo);
+
   };
+
+  const getRollNo = (e:any)=>{
+    //console.log(e.target.value);
+    setRollNo(e.target.value);
+  }
 
   return (
     <div>
@@ -17,9 +29,8 @@ export default function AddStudent() {
           <label>RollNo</label>
           <input
             type="text"
+            onChange={getRollNo}
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Enter Roll no"
           />
         </div>
