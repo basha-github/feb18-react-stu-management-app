@@ -4,26 +4,56 @@ import "../css/my-mar-stu.css";
 import { useState } from "react";
 
 export default function AddStudent() {
+  const [rollNo, setRollNo] = useState("");
+  const [name, setName] = useState("");
+  const [math, setMath] = useState("");
+  const [science, setScience] = useState("");
+  const [english, setEnglish] = useState("");
+  const [fee, setFee] = useState("");
+  const [course, setCourse] = useState("");
+  
 
-  const [rollNo,setRollNo] = useState(''); 
 
 
   const saveStu = (e: FormDataEvent) => {
     e.preventDefault();
     console.log("submit button clicked!!!!");
-    console.log("roll no--->"+rollNo);
+    console.log("roll no--->" + rollNo);
+    console.log("name--->" + name);
+    console.log("maths--->" + math);
+    console.log("science--->" + science);
+    console.log("english--->" + english);
+    console.log("fee--->" + fee);
+    console.log("course--->" + course);
+
 
   };
-
-  const getRollNo = (e:any)=>{
-    //console.log(e.target.value);
+  const getRollNo = (e: any) => {
     setRollNo(e.target.value);
-  }
+  };
+  const getName = (e: any) => {
+    setName(e.target.value);
+  };
+  const getMaths = (e: any) => {
+    setMath(e.target.value);
+  };
+  const getScience = (e: any) => {
+    setScience(e.target.value);
+  };
+  const getEnglish = (e: any) => {
+    setEnglish(e.target.value);
+  };
+  const getFee = (e: any) => {
+    setFee(e.target.value);
+  };
 
+  const getCourse = (e: any) => {
+    setCourse(e.target.value);
+  };
+  
   return (
     <div>
       <NavBar />
-
       <form onSubmit={saveStu} className="stu-add-mar">
         <div className="form-group">
           <label>RollNo</label>
@@ -39,19 +69,36 @@ export default function AddStudent() {
           <label>Name</label>
           <input
             type="text"
+            onChange={getName}
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Enter Name"
           />
         </div>
         <div className="form-group">
-          <label>Marks</label>
+          <label>Math Marks</label>
           <input
             type="text"
+            onChange={getMaths}
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            placeholder="Enter Marks "
+          />
+        </div>
+        <div className="form-group">
+          <label>Sci Marks</label>
+          <input
+            type="text"
+            onChange={getScience}
+            className="form-control"
+
+            placeholder="Enter Marks "
+          />
+        </div>
+        <div className="form-group">
+          <label>Eng Marks</label>
+          <input
+            type="text"
+            onChange={getEnglish}
+            className="form-control"
             placeholder="Enter Marks "
           />
         </div>
@@ -59,9 +106,8 @@ export default function AddStudent() {
           <label>Fee</label>
           <input
             type="text"
+            onChange={getFee}
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Enter Fee"
           />
         </div>
@@ -69,9 +115,8 @@ export default function AddStudent() {
           <label>Course</label>
           <input
             type="text"
+            onChange={getCourse}
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Enter Course"
           />
         </div>
