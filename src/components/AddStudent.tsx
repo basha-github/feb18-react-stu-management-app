@@ -1,12 +1,13 @@
 import React from "react";
 import NavBar from "./NavBar";
+import '../css/my-mar-stu.css'
 
 export default function AddStudent() {
   return (
     <div>
       <NavBar />
 
-      <form>
+      <form className="stu-add-mar">
         <div className="form-group">
           <label>RollNo</label>
           <input
@@ -58,7 +59,7 @@ export default function AddStudent() {
             placeholder="Enter Course"
           />
         </div>
-
+<br/>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
