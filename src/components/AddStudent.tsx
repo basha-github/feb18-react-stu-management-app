@@ -1,13 +1,18 @@
 import React from "react";
 import NavBar from "./NavBar";
-import '../css/my-mar-stu.css'
+import "../css/my-mar-stu.css";
 
 export default function AddStudent() {
+  const saveStu = (e: FormDataEvent) => {
+    e.preventDefault();
+    console.log("submit button clicked!!!!");
+  };
+
   return (
     <div>
       <NavBar />
 
-      <form className="stu-add-mar">
+      <form onSubmit={saveStu} className="stu-add-mar">
         <div className="form-group">
           <label>RollNo</label>
           <input
@@ -59,7 +64,7 @@ export default function AddStudent() {
             placeholder="Enter Course"
           />
         </div>
-<br/>
+        <br />
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
