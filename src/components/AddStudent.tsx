@@ -2,6 +2,7 @@
 import NavBar from "./NavBar";
 import "../css/my-mar-stu.css";
 import { useState } from "react";
+import axios from "axios";
 
 export default function AddStudent() {
   const [rollNo, setRollNo] = useState("");
@@ -25,6 +26,13 @@ export default function AddStudent() {
     console.log("english--->" + english);
     console.log("fee--->" + fee);
     console.log("course--->" + course);
+
+const student = {rollNo,name,math,science,english,fee,course};
+
+axios.post("http://localhost:8080/stu/mng/add",student);
+
+
+
 
 
   };
