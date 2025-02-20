@@ -1,12 +1,13 @@
 import React from "react";
 import NavBar from "./NavBar";
+import '../css/addcar.css'
 
 export default function AddCar() {
   return (
-    <div>
+    <div className="carcolor">
       <NavBar />
 
-      <form>
+      <form className="carmar">
         <div className="form-group">
           <label>Brand Name</label>
           <input
@@ -47,6 +48,8 @@ export default function AddCar() {
             placeholder="Enter img url"
           />
         </div>
+
+        <br/>
 
 
         <button type="submit" className="btn btn-primary">
