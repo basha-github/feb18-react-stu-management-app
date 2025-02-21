@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import NavBar from "./NavBar";
 import "../css/addcar.css";
 import axios from "axios";
@@ -26,22 +26,21 @@ export default function AddCar() {
     setImgUrl(e.target.value);
   };
 
-  const saveCar =(e:FormDataEvent)=>{
-
+  const saveCar = (e: FormDataEvent) => {
     e.preventDefault();
-    console.log("brand---->"+brand);
-    console.log("model---->"+model);
-    console.log("year---->"+year);
-    console.log("price---->"+price);
-    console.log("img url---->"+imgUrl);
+    console.log("brand---->" + brand);
+    console.log("model---->" + model);
+    console.log("year---->" + year);
+    console.log("price---->" + price);
+    console.log("img url---->" + imgUrl);
 
-    const carJson = {brand,model,year,price,imgUrl};
-    axios.post("http://localhost:8080/arun-show-room/car/add",carJson)
-    .then((res)=>{
-        console.log("res from spring boot-->"+res.data);
-    });
-    
-  }
+    const carJson = { brand, model, year, price, imgUrl };
+    axios
+      .post("http://localhost:8080/arun-show-room/car/add", carJson)
+      .then((res) => {
+        console.log("res from spring boot-->" + res.data);
+      });
+  };
 
   return (
     <div className="carcolor">

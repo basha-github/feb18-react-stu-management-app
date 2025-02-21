@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
+import axios from 'axios';
 
-export default function DisplayAll() {
+export default function ShowAllStus() {
 
-const stuData = [
+    const [stuData,setStuData] = useState([]); 
+
+/*const stuData = [
   {
     "rollNo": 12345,
     "name": "Abdul Rahman",
@@ -23,6 +26,18 @@ const stuData = [
     "course": "IT"
   }
 ];
+*/
+
+useEffect(
+    ()=>{
+        axios.get("http://localhost:8080/stu/mng/get/all")
+        .then(
+            (res)=>{
+                setStuData(res.data); 
+            }
+        );
+     } ,[]
+);
 
 
 

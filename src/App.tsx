@@ -5,18 +5,19 @@ import AddStudent from "./components/AddStudent";
 import DeleteStudent from "./components/DeleteStudent";
 import SearchStudent from "./components/SearchStudent";
 import AddCar from "./components/AddCar";
+import ShowAllStus from "./components/ShowAllStus";
 
 export default function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<DisplayAll />} />
+          <Route path="/" element={<ShowAllStus />} />
+          <Route path="/all" element={<DisplayAll />} />
           <Route path="/s-add" element={<AddStudent />} />
           <Route path="/del" element={<DeleteStudent />} />
           <Route path="/search" element={<SearchStudent />} />
           <Route path="/addCar" element={<AddCar />} />
-        
         </Routes>
       </BrowserRouter>
     </div>
