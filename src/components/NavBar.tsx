@@ -47,6 +47,11 @@ export default function NavBar() {
                   Add NewCar
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/allCars">
+                  Show allCars
+                </a>
+              </li>
              
             </ul>
           </div>

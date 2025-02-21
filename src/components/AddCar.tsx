@@ -2,8 +2,12 @@ import  { useState } from "react";
 import NavBar from "./NavBar";
 import "../css/addcar.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AddCar() {
+
+const carNav = useNavigate();
+
   const [model, setModel] = useState("");
   const [brand, setBrand] = useState("");
   const [year, setYear] = useState("");
@@ -39,6 +43,7 @@ export default function AddCar() {
       .post("http://localhost:8080/arun-show-room/car/add", carJson)
       .then((res) => {
         console.log("res from spring boot-->" + res.data);
+        carNav("/allCars")
       });
   };
 

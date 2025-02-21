@@ -6,6 +6,7 @@ import DeleteStudent from "./components/DeleteStudent";
 import SearchStudent from "./components/SearchStudent";
 import AddCar from "./components/AddCar";
 import ShowAllStus from "./components/ShowAllStus";
+import AllCars from "./components/AllCars";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/del" element={<DeleteStudent />} />
           <Route path="/search" element={<SearchStudent />} />
           <Route path="/addCar" element={<AddCar />} />
+          <Route path="/allCars" element={<AllCars />} />
         </Routes>
       </BrowserRouter>
     </div>
