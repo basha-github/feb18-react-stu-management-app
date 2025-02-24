@@ -23,7 +23,7 @@ export default function NavBar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" 
-                href="/">
+                href="/showAll">
                   Display All Students
                 </a>
               </li>

@@ -7,13 +7,15 @@ import SearchStudent from "./components/SearchStudent";
 import AddCar from "./components/AddCar";
 import ShowAllStus from "./components/ShowAllStus";
 import AllCars from "./components/AllCars";
+import Login from "./components/Login";
 
 export default function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ShowAllStus />} />
+        <Route path="/" element={<Login />} />
+          <Route path="/showAll" element={<ShowAllStus />} />
           <Route path="/all" element={<DisplayAll />} />
           <Route path="/s-add" element={<AddStudent />} />
           <Route path="/del" element={<DeleteStudent />} />
